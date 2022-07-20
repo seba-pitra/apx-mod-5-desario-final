@@ -20,7 +20,7 @@
 84C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\graph\LICENSE133016017439930000 0
 108C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@swc\helpers\src\_interop_require_default.mjs133016017458270000 0
 72C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\path-type133027993274896352 1
-54C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist133027993651439267 1
+54C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist133028006040311705 1
 97C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\core\lib\CommittedAsset.js133016017319550000 0
 60C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\.gitignore133027326364948122 0
 95C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\css-what\lib\commonjs\index.d.ts133016017545340000 0
@@ -90,7 +90,7 @@
 59C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\yarn.lock133027522269043695 0
 92C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@swc\helpers\lib\_defaults.js133016017458270000 0
 74C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\cosmiconfig133027993216564820 1
-62C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\src\index.ts133027975351318250 0
+62C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\src\index.ts133027995214097875 0
 96C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\core\lib\public\Config.js133016017319550000 0
 81C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\get-port\readme.md133016017307460000 0
 84C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\node-releases\LICENSE133018677654530000 0
@@ -151,7 +151,7 @@
 93C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\optimizer-svgo\LICENSE133016017322050000 0
 81C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\css-select\LICENSE133016017513380000 0
 79C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\json5\LICENSE.md133027511104159613 0
-76C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\src\pages\welcome\index.ts133027990628438912 0
+76C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\src\pages\welcome\index.ts133027998703885940 0
 91C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\msgpackr-extract\binding.gyp133016017547460000 0
 85C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\querystring\License.md133027522261001277 0
 108C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\reporter-cli\test\CLIReporter.test.js133016017312050000 0
@@ -175,7 +175,7 @@
 94C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\caniuse-lite\data\regions\BT.js133026284962030000 0
 112C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\caniuse-lite\data\features\public-class-fields.js133026284962030000 0
 103C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\type-fest\source\conditional-except.d.ts133016017538460000 0
-80C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\src\pages\instruction\index.ts133027976520166979 0
+80C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\src\pages\instruction\index.ts133028006039417758 0
 82C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\lmdb\src\writer.cpp133016017578650000 0
 97C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\caniuse-lite\data\features\apng.js133026284962030000 0
 78C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\css-what\lib\es133027993232021864 1
@@ -201,7 +201,7 @@
 87C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\terser\lib\propmangle.js133027511120091231 0
 69C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@lezer133027993080101416 1
 81C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\svgo\lib\parser.js133027511104375701 0
-72C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.b71e74eb.js133027993651258762 0
+72C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.b71e74eb.js133028006040301689 0
 109C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\node-resolver-core\lib\NodeResolver.js133016017495370000 0
 96C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\svgo\plugins\removeUselessDefs.js133027511104771505 0
 125C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\source-map\parcel_sourcemap_wasm\dist-web\package.json133016017345580000 0
@@ -255,7 +255,7 @@
 72C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@mischnic133027993081986729 1
 110C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\core\src\requests\BundleGraphRequest.js133016017319550000 0
 75C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\import-fresh133027993253672955 1
-78C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\src\components\text\index.ts133027989673208602 0
+78C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\src\components\text\index.ts133028005039826911 0
 81C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\chrome-trace-event133027993214417202 1
 89C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\workers\src\bus.js133016017342220000 0
 79C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\querystring\test133027993279395964 1
@@ -613,7 +613,7 @@
 81C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\lmdb\src\windows.c133016017578650000 0
 94C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\caniuse-lite\data\regions\DZ.js133026284962030000 0
 114C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\transformer-react-refresh-wrap\package.json133016017419250000 0
-65C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.html133027993651434264 0
+65C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.html133028000045904573 0
 91C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\yaml\dist\Schema-88e323a7.js133016017559930000 0
 79C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\v8-compile-cache133027993303002948 1
 91C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\timsort\build\timsort.min.js133016017534740000 0
@@ -692,7 +692,7 @@
 100C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\caniuse-lite\data\features\ac3-ec3.js133026284962030000 0
 94C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\caniuse-lite\data\regions\NI.js133026284962030000 0
 109C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\caniuse-lite\data\features\css-supports-api.js133026284962030000 0
-76C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.b71e74eb.js.map133027993651359593 0
+76C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.b71e74eb.js.map133028006040311705 0
 108C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\lmdb\node_modules\node-addon-api\node_api.gyp133016017578760000 0
 100C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\utils\test\DefaultMap.test.js133016017308860000 0
 89C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\fs-search\index.js133016017339670000 0
@@ -1370,7 +1370,7 @@
 94C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\caniuse-lite\data\regions\HK.js133026284962030000 0
 98C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\transformer-babel\README.md133016017327910000 0
 97C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\reporter-cli\src\render.js133016017312050000 0
-77C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.61d3354a.css.map133027993651359593 0
+77C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.61d3354a.css.map133028000045425950 0
 91C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\source-map\lib\quick-sort.js133016017548130000 0
 111C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\@parcel\source-map\node_modules\.bin\detect-libc133027064893963439 0
 81C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\lmdb\src\lmdb-js.h133016017578650000 0
@@ -4393,16 +4393,16 @@
 76C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\.bin\svgo.ps1133027511133949184 0
 78C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\.bin\terser.cmd133027511133902466 0
 78C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\node_modules\.bin\terser.ps1133027511133902466 0
-73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\fondo.0d6d5d8b.png133027993651364593 0
+73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\fondo.0d6d5d8b.png133028000045706560 0
 72C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.0c93c656.js133027271875785999 0
 76C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.0c93c656.js.map133027271875824224 0
-73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.61d3354a.css133027993651253765 0
+73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\index.61d3354a.css133028000045408032 0
 73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\papel.015715f4.png133027292517583056 0
 73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\papel.201f63b5.png133027297624823015 0
 73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\papel.2c6c66b6.png133027315264823484 0
-73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\papel.6b6bddab.jpg133027993651253765 0
+73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\papel.6b6bddab.jpg133028000045693955 0
 73C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\papel.d620fd19.jpg133027324737691662 0
-74C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\piedra.1b4d58b9.jpg133027993651331084 0
+74C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\piedra.1b4d58b9.jpg133028000045499040 0
 74C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\piedra.3307397b.png133027292597959620 0
 74C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\tijera.cf685c16.png133027292624920227 0
-74C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\tijera.f33043d9.jpg133027993651253765 0
+74C:\Users\sebas\src\dwf-m5\apx-mod-5-desario-final\dist\tijera.f33043d9.jpg133028000045693955 0

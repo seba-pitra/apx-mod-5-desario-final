@@ -9,8 +9,8 @@ import { initPapelComp } from "./components/papel";
 
 (function() {
     const root = document.querySelector(".root")
-    
     initRouter(root)
+    
     initTijeraComp();
     initPiedraComp();
     initPapelComp();

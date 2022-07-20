@@ -14,14 +14,14 @@ export function initTextComp() {
             let style = document.createElement("style");
             style.textContent = `
             .title {
+                display:flex;
+                flex-direction:column
                 font-family: 'Acme', sans serif;
                 font-size: 52px;
                 font-weight: bold;
                 text-align: center;
                 color: #009048;
                 margin: 115px 0 0;
-                display:flex;
-                flex-direction:column
             }
             @media(min-width:769px) {
                 .title {
@@ -31,12 +31,20 @@ export function initTextComp() {
                 }
             }            
             .body {
+                color: #000
                 font-family: 'Acme', sans serif;
-                font-size: 18px;
+                font-size: 40px;
                 font-weight: bold;
                 text-align: center;
-                color: #009048;
-                padding: 30px;
+                margin: 115px 0 0;
+                padding:20px;
+            }
+            @media(min-width:769px) {
+                .body {
+                    margin-top: 145px;
+                    font-size: 55px;
+                    margin-top: 205px;
+                }
             }`
             
             shadow.appendChild(div);

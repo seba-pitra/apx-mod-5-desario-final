@@ -23,7 +23,7 @@ export function initPageWelcome(params) {
     const button = div.querySelector("custom-boton");
     button?.addEventListener("click", (e) => {
       e.preventDefault()
-      params.goTo("./intruction")
+      params.goTo("./instruction")
     })
     
     return div;

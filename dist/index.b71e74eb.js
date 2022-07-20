@@ -569,14 +569,14 @@ function initTextComp() {
             let style = document.createElement("style");
             style.textContent = `
             .title {
+                display:flex;
+                flex-direction:column
                 font-family: 'Acme', sans serif;
                 font-size: 52px;
                 font-weight: bold;
                 text-align: center;
                 color: #009048;
                 margin: 115px 0 0;
-                display:flex;
-                flex-direction:column
             }
             @media(min-width:769px) {
                 .title {
@@ -586,12 +586,20 @@ function initTextComp() {
                 }
             }            
             .body {
+                color: #000
                 font-family: 'Acme', sans serif;
-                font-size: 18px;
+                font-size: 40px;
                 font-weight: bold;
                 text-align: center;
-                color: #009048;
-                padding: 30px;
+                margin: 115px 0 0;
+                padding:20px;
+            }
+            @media(min-width:769px) {
+                .body {
+                    margin-top: 145px;
+                    font-size: 55px;
+                    margin-top: 205px;
+                }
             }`;
             shadow.appendChild(div);
             shadow.appendChild(style);
@@ -697,7 +705,7 @@ function initPageWelcome(params) {
     const button = div.querySelector("custom-boton");
     button?.addEventListener("click", (e)=>{
         e.preventDefault();
-        params.goTo("./intruction");
+        params.goTo("./instruction");
     });
     return div;
 }
@@ -712,7 +720,26 @@ function initResultPage(params) {}
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initInstrucionsPage", ()=>initInstrucionsPage);
-function initInstrucionsPage(params) {}
+function initInstrucionsPage(params) {
+    const div = document.createElement("div");
+    div.style.display = "flex";
+    div.style.flexDirection = "column";
+    div.style.justifyContent = "space-around";
+    div.style.alignItems = "center";
+    div.style.gap = "100px";
+    div.innerHTML = `
+    <custom-text style="max-width:375px;">
+       Presioná jugar y elegí: piedra, papel o tijera antes de que pasen los 3 segundos.
+    </custom-text>
+    <custom-boton>¡Jugar!</custom-boton>
+    `;
+    const button = div.querySelector("custom-boton");
+    button?.addEventListener("click", (e)=>{
+        e.preventDefault();
+        params.goTo("./play");
+    });
+    return div;
+}
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bxzhL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
