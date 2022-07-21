@@ -26,6 +26,9 @@ export function initPlayPage(params) {
     const tijera:any = div.querySelector("custom-tijera");
 
     tijera.addEventListener("click", (e) => {
+        papel.style.opacity = "0.4";
+        piedra.style.opacity = "0.4";
+        
         currentState.currentGame.computerPlay = machinePlay(); 
         currentState.currentGame.myPlay = "tijeras";
         state.setState(currentState);
@@ -35,6 +38,9 @@ export function initPlayPage(params) {
     });
     
     piedra.addEventListener("click", (e) => {
+        papel.style.opacity = "0.4";
+        tijera.style.opacity = "0.4";
+
         currentState.currentGame.computerPlay = machinePlay(); 
         currentState.currentGame.myPlay = "piedra";
         state.setState(currentState);
@@ -45,6 +51,9 @@ export function initPlayPage(params) {
     });
 
     papel.addEventListener("click", (e) => {
+        piedra.style.opacity = "0.4";
+        tijera.style.opacity = "0.4";
+
         currentState.currentGame.computerPlay = machinePlay(); 
         currentState.currentGame.myPlay = "papel";
         state.setState(currentState);

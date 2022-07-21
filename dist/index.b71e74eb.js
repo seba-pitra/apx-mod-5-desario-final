@@ -789,6 +789,8 @@ function initPlayPage(params) {
     const papel = div.querySelector("custom-papel");
     const tijera = div.querySelector("custom-tijera");
     tijera.addEventListener("click", (e)=>{
+        papel.style.opacity = "0.4";
+        piedra.style.opacity = "0.4";
         currentState.currentGame.computerPlay = machinePlay();
         currentState.currentGame.myPlay = "tijeras";
         (0, _state.state).setState(currentState);
@@ -797,6 +799,8 @@ function initPlayPage(params) {
         }, 2000);
     });
     piedra.addEventListener("click", (e)=>{
+        papel.style.opacity = "0.4";
+        tijera.style.opacity = "0.4";
         currentState.currentGame.computerPlay = machinePlay();
         currentState.currentGame.myPlay = "piedra";
         (0, _state.state).setState(currentState);
@@ -805,6 +809,8 @@ function initPlayPage(params) {
         }, 2000);
     });
     papel.addEventListener("click", (e)=>{
+        piedra.style.opacity = "0.4";
+        tijera.style.opacity = "0.4";
         currentState.currentGame.computerPlay = machinePlay();
         currentState.currentGame.myPlay = "papel";
         (0, _state.state).setState(currentState);
@@ -880,7 +886,6 @@ function initPageJugada(params) {
     ${comps[miJugada]}
     `;
     const resultOfPlay = (0, _state.state).whoWins(miJugada, maquinaJugada);
-    console.log(resultOfPlay);
     setTimeout(()=>{
         return params.goTo(`/${resultOfPlay}`);
     }, 2000);
@@ -910,14 +915,20 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initPerdistePage", ()=>initPerdistePage);
 var _state = require("../../state");
+const imagen = require("url:../../images/lost.png");
 function initPerdistePage(params) {
     const currentState = (0, _state.state).getState();
     currentState.history.computerPlay = currentState.history.computerPlay + 1;
+    console.log("soy el historial mio", currentState.history.myPlay);
     const div = document.createElement("div");
     div.innerHTML = `
-    <div>
-    <button class="button-again">Volver</button>
+    <img src="${imagen}" alt="">
+    <div class="score-container">
+       <custom-text>Score</custom-text>
+       <custom-text>Vos: ${currentState.history.myPlay}</custom-text>
+       <custom-text>Máquina: ${currentState.history.computerPlay}</custom-text>
     </div>
+    <button class="button-again">Volver a jugar</button>
     `;
     const button = div.querySelector(".button-again");
     button?.addEventListener("click", (e)=>{
@@ -926,53 +937,8 @@ function initPerdistePage(params) {
     return div;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju"}],"hCTRO":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "pageGanaste", ()=>pageGanaste);
-var _state = require("../../state");
-function pageGanaste(params) {
-    const currentState = (0, _state.state).getState();
-    currentState.history.myPlay = currentState.history.myPlay + 1;
-    const div = document.createElement("div");
-    div.innerHTML = `
-    <div>
-    <button class="button-again">Volver</button>
-    </div>
-    `;
-    const button = div.querySelector(".button-again");
-    button?.addEventListener("click", (e)=>{
-        params.goTo("/instruction");
-    });
-    return div;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju"}],"bxzhL":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initTijeraComp", ()=>initTijeraComp);
-const imagen = require("url:../../images/tijera.jpg");
-function initTijeraComp() {
-    class Tijera extends HTMLElement {
-        constructor(){
-            super();
-            this.render();
-        }
-        render() {
-            const shadow = this.attachShadow({
-                mode: "open"
-            });
-            const img = document.createElement("img");
-            img.src = imagen;
-            img.style.height = "128px";
-            shadow.appendChild(img);
-        }
-    }
-    customElements.define("custom-tijera", Tijera);
-}
-
-},{"url:../../images/tijera.jpg":"9HZ85","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9HZ85":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "tijera.f33043d9.jpg" + "?" + Date.now();
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju","url:../../images/lost.png":"5WqDi"}],"5WqDi":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "lost.ca5f8e51.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
@@ -1008,7 +974,64 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"4aBdO":[function(require,module,exports) {
+},{}],"hCTRO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "pageGanaste", ()=>pageGanaste);
+var _state = require("../../state");
+const imagen = require("url:../../images/win.png");
+function pageGanaste(params) {
+    const currentState = (0, _state.state).getState();
+    currentState.history.myPlay = currentState.history.myPlay + 1;
+    console.log("soy el historial mio", currentState.history.myPlay);
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <img src="${imagen}" alt="">
+    <div class="score-container">
+       <custom-text>Score</custom-text>
+       <custom-text>Vos: ${currentState.history.myPlay}</custom-text>
+       <custom-text>Máquina: ${currentState.history.computerPlay}</custom-text>
+    </div>
+    <button class="button-again">Volver a jugar</button>
+    `;
+    const button = div.querySelector(".button-again");
+    button?.addEventListener("click", (e)=>{
+        params.goTo("/instruction");
+    });
+    return div;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju","url:../../images/win.png":"cBmdq"}],"cBmdq":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "win.a7d5a83e.png" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"bxzhL":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initTijeraComp", ()=>initTijeraComp);
+const imagen = require("url:../../images/tijera.jpg");
+function initTijeraComp() {
+    class Tijera extends HTMLElement {
+        constructor(){
+            super();
+            this.render();
+        }
+        render() {
+            const shadow = this.attachShadow({
+                mode: "open"
+            });
+            const img = document.createElement("img");
+            img.src = imagen;
+            img.style.height = "128px";
+            shadow.appendChild(img);
+        }
+    }
+    customElements.define("custom-tijera", Tijera);
+}
+
+},{"url:../../images/tijera.jpg":"9HZ85","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9HZ85":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "tijera.f33043d9.jpg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"4aBdO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initPiedraComp", ()=>initPiedraComp);

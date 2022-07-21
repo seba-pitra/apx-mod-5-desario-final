@@ -1,5 +1,3 @@
-import { stat } from "fs";
-import { cpuUsage } from "process";
 import { state } from "../../state"
 
 export function initPageJugada(params) {
@@ -9,14 +7,12 @@ export function initPageJugada(params) {
     const currentState = state.getState();
     const miJugada = currentState.currentGame.myPlay
     const maquinaJugada = currentState.currentGame.computerPlay
-    
 
     const comps = {
         piedra: "<custom-piedra></custom-piedra>",
         papel: "<custom-papel></custom-papel>",
         tijeras: "<custom-tijera></custom-tijera>"
     };
-
 
     div.innerHTML = `
     ${ comps[maquinaJugada] }
@@ -25,12 +21,7 @@ export function initPageJugada(params) {
 
     const resultOfPlay = state.whoWins(miJugada, maquinaJugada)
     
-    console.log(resultOfPlay);
-    setTimeout(()=>{
-        return params.goTo(`/${resultOfPlay}`);
-        
-    },2000)
-    
+    setTimeout(()=>{ return params.goTo(`/${resultOfPlay}`); },2000)
     
     return div;
 }
