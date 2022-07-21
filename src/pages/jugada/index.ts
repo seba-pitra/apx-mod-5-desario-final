@@ -22,12 +22,22 @@ export function initPageJugada(params) {
     `;
 
     const resultOfPlay = state.whoWins(miJugada, maquinaJugada)
+
     if (resultOfPlay == "ganaste") {
-        const value = sessionStorage.getItem("me")
+        let value = sessionStorage.getItem("me")
         sessionStorage.setItem("me", JSON.stringify(Number(value) + 1))
     } else if(resultOfPlay == "perdiste") {
-        const value = sessionStorage.getItem("machine")
+        let value = sessionStorage.getItem("machine")
         sessionStorage.setItem("machine", JSON.stringify(Number(value) + 1))
+    } else {
+        let myValue = sessionStorage.getItem("me")
+        let machineValue = sessionStorage.getItem("machine")
+        if(myValue == null) {
+            sessionStorage.setItem("me", JSON.stringify(Number(myValue)))
+        }
+        if(machineValue == null) {
+            sessionStorage.setItem("machine", JSON.stringify(Number(machineValue)))
+        }
     }
     
     setTimeout(()=>{ return params.goTo(`/${resultOfPlay}`); }, 2000)
