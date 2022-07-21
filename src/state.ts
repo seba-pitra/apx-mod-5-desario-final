@@ -10,9 +10,10 @@ export const state = {
             computerPlay:"",
             myPlay:""
         },
-        history: [{
-
-        }]
+        history: {
+            computerPlay: 0,
+            myPlay: 0
+        }
     },
     listeners:[],
     getState() {
@@ -20,8 +21,10 @@ export const state = {
     },
     setState(newState) {
         this.data = newState;
+        console.log("soy el estado, cambié",newState);
         for (const cb of this.listeners) {
             cb();
+            
         }
     },
     suscribe(cb: (any) => any) {
@@ -36,23 +39,16 @@ export const state = {
         currentState.currentGame.myPlay;
     },
     whoWins(myPlay:Jugada, computerPlay:Jugada) {
-        const ganeConPiedra = myPlay == "piedra" && computerPlay == "tijeras"
-        const ganeConPapel = myPlay == "papel" && computerPlay == "piedra"
-        const ganeConTijeras = myPlay == "tijeras" && computerPlay == "papel"
-        if(ganeConPapel) {
-            return ganeConPapel
+        if (computerPlay === "piedra" && myPlay === "tijeras") {
+            return "perdiste"
+        }else if(computerPlay === "papel" && myPlay === "piedra") {
+            return "perdiste"
+        }else if(computerPlay === "tijeras" && myPlay === "papel") {
+            return "perdiste"
+        }else if(myPlay === computerPlay) {
+            return "empate"
+        } else {
+            return "ganaste"
         }
-
-        //me parece mejor si lo hago con condicionales
-        const gane = [ganeConPiedra, ganeConPapel, ganeConTijeras].includes(true)
-        const perdi = [ganeConPiedra, ganeConPapel, ganeConTijeras].includes(false)
-        console.log(gane, perdi);
-        
     }
 }
-
-state.whoWins("papel", "piedra");
-
-// state.setMove("papel")
-// state.pushToHistory({computerPlay:"papel", myPlay:"piedra"}) aca le decimos al historial que guarde. 
-// Jugue contra la compu y me ganó

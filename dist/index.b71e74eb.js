@@ -582,7 +582,6 @@ function initTextComp() {
                 .title {
                     margin-top: 145px;
                     font-size: 82px;
-                    margin-top: 205px;
                 }
             }            
             .body {
@@ -591,14 +590,11 @@ function initTextComp() {
                 font-size: 40px;
                 font-weight: bold;
                 text-align: center;
-                margin: 115px 0 0;
                 padding:20px;
             }
             @media(min-width:769px) {
                 .body {
-                    margin-top: 145px;
                     font-size: 55px;
-                    margin-top: 205px;
                 }
             }`;
             shadow.appendChild(div);
@@ -645,6 +641,11 @@ parcelHelpers.export(exports, "initRouter", ()=>initRouter);
 var _welcome = require("./pages/welcome");
 var _instruction = require("./pages/instruction");
 var _result = require("./pages/result");
+var _play = require("./pages/play");
+var _jugada = require("./pages/jugada");
+var _ganaste = require("./pages/ganaste");
+var _perdiste = require("./pages/perdiste");
+var _empate = require("./pages/empate");
 const routes = [
     {
         path: /\/welcome/,
@@ -655,8 +656,28 @@ const routes = [
         component: (0, _instruction.initInstrucionsPage)
     },
     {
+        path: /\/play/,
+        component: (0, _play.initPlayPage)
+    },
+    {
+        path: /\/choose/,
+        component: (0, _jugada.initPageJugada)
+    },
+    {
         path: /\/result/,
         component: (0, _result.initResultPage)
+    },
+    {
+        path: /\/ganaste/,
+        component: (0, _ganaste.pageGanaste)
+    },
+    {
+        path: /\/perdiste/,
+        component: (0, _perdiste.initPerdistePage)
+    },
+    {
+        path: /\/empate/,
+        component: (0, _empate.initEmpatePage)
     }
 ];
 function initRouter(container) {
@@ -680,30 +701,26 @@ function initRouter(container) {
     };
 }
 
-},{"./pages/welcome":"fNSF3","./pages/result":"7wfLH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./pages/instruction":"3NM0V"}],"fNSF3":[function(require,module,exports) {
+},{"./pages/welcome":"fNSF3","./pages/result":"7wfLH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./pages/instruction":"3NM0V","./pages/play":"hbEIY","./pages/jugada":"gK5Oo","./pages/empate":"9DtaA","./pages/perdiste":"dk9yp","./pages/ganaste":"hCTRO"}],"fNSF3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initPageWelcome", ()=>initPageWelcome);
 function initPageWelcome(params) {
     const div = document.createElement("div");
-    div.style.display = "flex";
-    div.style.flexDirection = "column";
-    div.style.justifyContent = "space-around";
-    div.style.alignItems = "center";
-    div.style.gap = "100px";
+    div.className = "welcome-container";
     div.innerHTML = `
-    <custom-text variant="title">
-       Piedra, Papel ó Tijeras
-    </custom-text>
-    <custom-boton>Empezar</custom-boton>
-    <div style="width:375px;display:flex; justify-content:space-between">
-       <custom-tijera></custom-tijera>
-       <custom-piedra></custom-piedra>
-       <custom-papel></custom-papel>
-    </div>
+      <custom-text variant="title">
+         Piedra, Papel ó Tijeras
+      </custom-text>
+      <custom-boton>Empezar</custom-boton>
+      <div class="welcome-hands-container">
+         <custom-tijera></custom-tijera>
+         <custom-piedra></custom-piedra>
+         <custom-papel></custom-papel>
+      </div>
     `;
     const button = div.querySelector("custom-boton");
-    button?.addEventListener("click", (e)=>{
+    button.addEventListener("click", (e)=>{
         e.preventDefault();
         params.goTo("./instruction");
     });
@@ -722,26 +739,215 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initInstrucionsPage", ()=>initInstrucionsPage);
 function initInstrucionsPage(params) {
     const div = document.createElement("div");
-    div.style.display = "flex";
-    div.style.flexDirection = "column";
-    div.style.justifyContent = "space-around";
-    div.style.alignItems = "center";
-    div.style.gap = "100px";
+    div.className = "instructions-container";
     div.innerHTML = `
-    <custom-text style="max-width:375px;">
+    <custom-text>
        Presioná jugar y elegí: piedra, papel o tijera antes de que pasen los 3 segundos.
     </custom-text>
     <custom-boton>¡Jugar!</custom-boton>
+    <div class="play-hands-container">
+        <custom-tijera></custom-tijera>
+        <custom-piedra></custom-piedra>
+        <custom-papel></custom-papel>
+    </div>
     `;
     const button = div.querySelector("custom-boton");
-    button?.addEventListener("click", (e)=>{
+    button.addEventListener("click", (e)=>{
         e.preventDefault();
-        params.goTo("./play");
+        params.goTo("/play");
     });
     return div;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bxzhL":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hbEIY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initPlayPage", ()=>initPlayPage);
+var _state = require("../../state");
+function initPlayPage(params) {
+    const div = document.createElement("div");
+    div.className = "play-container";
+    div.innerHTML = `
+    <div>Aca va el counter</div>
+    <div class="play-hands-container">
+        <custom-tijera></custom-tijera>
+        <custom-piedra></custom-piedra>
+        <custom-papel></custom-papel>
+    </div>
+    `;
+    function machinePlay() {
+        const options = [
+            "piedra",
+            "papel",
+            "tijeras"
+        ];
+        const choose = options[Math.floor(Math.random() * options.length)];
+        return choose;
+    }
+    const currentState = (0, _state.state).getState();
+    const piedra = div.querySelector("custom-piedra");
+    const papel = div.querySelector("custom-papel");
+    const tijera = div.querySelector("custom-tijera");
+    tijera.addEventListener("click", (e)=>{
+        currentState.currentGame.computerPlay = machinePlay();
+        currentState.currentGame.myPlay = "tijeras";
+        (0, _state.state).setState(currentState);
+        setTimeout(()=>{
+            params.goTo("/choose");
+        }, 2000);
+    });
+    piedra.addEventListener("click", (e)=>{
+        currentState.currentGame.computerPlay = machinePlay();
+        currentState.currentGame.myPlay = "piedra";
+        (0, _state.state).setState(currentState);
+        setTimeout(()=>{
+            return params.goTo("/choose");
+        }, 2000);
+    });
+    papel.addEventListener("click", (e)=>{
+        currentState.currentGame.computerPlay = machinePlay();
+        currentState.currentGame.myPlay = "papel";
+        (0, _state.state).setState(currentState);
+        setTimeout(()=>{
+            return params.goTo("/choose");
+        }, 2000);
+    });
+    return div;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju"}],"1Yeju":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "state", ()=>state);
+const state = {
+    data: {
+        currentGame: {
+            computerPlay: "",
+            myPlay: ""
+        },
+        history: {
+            computerPlay: 0,
+            myPlay: 0
+        }
+    },
+    listeners: [],
+    getState () {
+        return this.data;
+    },
+    setState (newState) {
+        this.data = newState;
+        console.log("soy el estado, cambi\xe9", newState);
+        for (const cb of this.listeners)cb();
+    },
+    suscribe (cb) {
+        this.listeners.push(cb);
+    },
+    pushToHistory (play) {
+        const currentState = this.getState();
+        currentState.history(play);
+    },
+    setMove (move) {
+        const currentState = this.getState();
+        currentState.currentGame.myPlay;
+    },
+    whoWins (myPlay, computerPlay) {
+        if (computerPlay === "piedra" && myPlay === "tijeras") return "perdiste";
+        else if (computerPlay === "papel" && myPlay === "piedra") return "perdiste";
+        else if (computerPlay === "tijeras" && myPlay === "papel") return "perdiste";
+        else if (myPlay === computerPlay) return "empate";
+        else return "ganaste";
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gK5Oo":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initPageJugada", ()=>initPageJugada);
+var _state = require("../../state");
+function initPageJugada(params) {
+    const div = document.createElement("div");
+    div.className = "jugada-container";
+    const currentState = (0, _state.state).getState();
+    const miJugada = currentState.currentGame.myPlay;
+    const maquinaJugada = currentState.currentGame.computerPlay;
+    const comps = {
+        piedra: "<custom-piedra></custom-piedra>",
+        papel: "<custom-papel></custom-papel>",
+        tijeras: "<custom-tijera></custom-tijera>"
+    };
+    div.innerHTML = `
+    ${comps[maquinaJugada]}
+    ${comps[miJugada]}
+    `;
+    const resultOfPlay = (0, _state.state).whoWins(miJugada, maquinaJugada);
+    console.log(resultOfPlay);
+    setTimeout(()=>{
+        return params.goTo(`/${resultOfPlay}`);
+    }, 2000);
+    return div;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju"}],"9DtaA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initEmpatePage", ()=>initEmpatePage);
+function initEmpatePage(params) {
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <div>
+    <button class="button-again">Volver</button>
+    </div>
+    `;
+    const button = div.querySelector(".button-again");
+    button?.addEventListener("click", (e)=>{
+        params.goTo("/instruction");
+    });
+    return div;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dk9yp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initPerdistePage", ()=>initPerdistePage);
+var _state = require("../../state");
+function initPerdistePage(params) {
+    const currentState = (0, _state.state).getState();
+    currentState.history.computerPlay = currentState.history.computerPlay + 1;
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <div>
+    <button class="button-again">Volver</button>
+    </div>
+    `;
+    const button = div.querySelector(".button-again");
+    button?.addEventListener("click", (e)=>{
+        params.goTo("/instruction");
+    });
+    return div;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju"}],"hCTRO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "pageGanaste", ()=>pageGanaste);
+var _state = require("../../state");
+function pageGanaste(params) {
+    const currentState = (0, _state.state).getState();
+    currentState.history.myPlay = currentState.history.myPlay + 1;
+    const div = document.createElement("div");
+    div.innerHTML = `
+    <div>
+    <button class="button-again">Volver</button>
+    </div>
+    `;
+    const button = div.querySelector(".button-again");
+    button?.addEventListener("click", (e)=>{
+        params.goTo("/instruction");
+    });
+    return div;
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju"}],"bxzhL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initTijeraComp", ()=>initTijeraComp);

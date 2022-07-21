@@ -27,7 +27,6 @@ export function initTextComp() {
                 .title {
                     margin-top: 145px;
                     font-size: 82px;
-                    margin-top: 205px;
                 }
             }            
             .body {
@@ -36,14 +35,11 @@ export function initTextComp() {
                 font-size: 40px;
                 font-weight: bold;
                 text-align: center;
-                margin: 115px 0 0;
                 padding:20px;
             }
             @media(min-width:769px) {
                 .body {
-                    margin-top: 145px;
                     font-size: 55px;
-                    margin-top: 205px;
                 }
             }`
             
