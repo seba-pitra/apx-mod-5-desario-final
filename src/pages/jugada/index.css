@@ -5,3 +5,7 @@
     justify-content: space-between;
     height: 100vh;
 }
+
+.machine {
+    transform: rotate(180deg);
+}

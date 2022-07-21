@@ -15,7 +15,9 @@ export function initPageJugada(params) {
     };
 
     div.innerHTML = `
+    <div class="machine">
     ${ comps[maquinaJugada] }
+    </div>
     ${ comps[miJugada] }
     `;
 

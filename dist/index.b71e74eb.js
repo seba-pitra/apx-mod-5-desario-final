@@ -538,6 +538,7 @@ var _button = require("./components/button");
 var _tijeras = require("./components/tijeras");
 var _piedra = require("./components/piedra");
 var _papel = require("./components/papel");
+var _counter = require("./components/counter");
 (function() {
     const root = document.querySelector(".root");
     (0, _router.initRouter)(root);
@@ -546,95 +547,10 @@ var _papel = require("./components/papel");
     (0, _papel.initPapelComp)();
     (0, _button.initBotonComp)();
     (0, _text.initTextComp)();
+    (0, _counter.initCounterComp)();
 })();
 
-},{"./components/text":"6Xncd","./router":"4QFWt","./components/tijeras":"bxzhL","./components/piedra":"4aBdO","./components/papel":"d106K","./components/button":"dZaQH"}],"6Xncd":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initTextComp", ()=>initTextComp);
-function initTextComp() {
-    class TextComponent extends HTMLElement {
-        constructor(){
-            super();
-            this.render();
-        }
-        render() {
-            const shadow = this.attachShadow({
-                mode: "open"
-            });
-            const variant = this.getAttribute("variant") || "body";
-            const div = document.createElement("div");
-            div.className = variant;
-            div.textContent = this.textContent;
-            let style = document.createElement("style");
-            style.textContent = `
-            .title {
-                display:flex;
-                flex-direction:column
-                font-family: 'Acme', sans serif;
-                font-size: 52px;
-                font-weight: bold;
-                text-align: center;
-                color: #009048;
-                margin: 115px 0 0;
-            }
-            @media(min-width:769px) {
-                .title {
-                    margin-top: 145px;
-                    font-size: 82px;
-                }
-            }            
-            .body {
-                color: #000
-                font-family: 'Acme', sans serif;
-                font-size: 40px;
-                font-weight: bold;
-                text-align: center;
-                padding:20px;
-            }
-            @media(min-width:769px) {
-                .body {
-                    font-size: 55px;
-                }
-            }`;
-            shadow.appendChild(div);
-            shadow.appendChild(style);
-        }
-    }
-    customElements.define("custom-text", TextComponent);
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}],"4QFWt":[function(require,module,exports) {
+},{"./router":"4QFWt","./components/text":"6Xncd","./components/button":"dZaQH","./components/tijeras":"bxzhL","./components/piedra":"4aBdO","./components/papel":"d106K","./components/counter":"9ZXz4"}],"4QFWt":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initRouter", ()=>initRouter);
@@ -701,7 +617,7 @@ function initRouter(container) {
     };
 }
 
-},{"./pages/welcome":"fNSF3","./pages/result":"7wfLH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./pages/instruction":"3NM0V","./pages/play":"hbEIY","./pages/jugada":"gK5Oo","./pages/empate":"9DtaA","./pages/perdiste":"dk9yp","./pages/ganaste":"hCTRO"}],"fNSF3":[function(require,module,exports) {
+},{"./pages/welcome":"fNSF3","./pages/instruction":"3NM0V","./pages/result":"7wfLH","./pages/play":"hbEIY","./pages/jugada":"gK5Oo","./pages/ganaste":"hCTRO","./pages/perdiste":"dk9yp","./pages/empate":"9DtaA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fNSF3":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initPageWelcome", ()=>initPageWelcome);
@@ -727,13 +643,37 @@ function initPageWelcome(params) {
     return div;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7wfLH":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initResultPage", ()=>initResultPage);
-function initResultPage(params) {}
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3NM0V":[function(require,module,exports) {
+},{}],"3NM0V":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initInstrucionsPage", ()=>initInstrucionsPage);
@@ -742,7 +682,7 @@ function initInstrucionsPage(params) {
     div.className = "instructions-container";
     div.innerHTML = `
     <custom-text>
-       Presioná jugar y elegí: piedra, papel o tijera antes de que pasen los 3 segundos.
+       Presioná jugar y elegí: piedra, papel o tijera antes de que pasen los segundos.
     </custom-text>
     <custom-boton>¡Jugar!</custom-boton>
     <div class="play-hands-container">
@@ -759,6 +699,12 @@ function initInstrucionsPage(params) {
     return div;
 }
 
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7wfLH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initResultPage", ()=>initResultPage);
+function initResultPage(params) {}
+
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hbEIY":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -768,13 +714,19 @@ function initPlayPage(params) {
     const div = document.createElement("div");
     div.className = "play-container";
     div.innerHTML = `
-    <div>Aca va el counter</div>
+    <counter-comp></counter-comp>
     <div class="play-hands-container">
         <custom-tijera></custom-tijera>
         <custom-piedra></custom-piedra>
         <custom-papel></custom-papel>
     </div>
     `;
+    function redireccionar() {
+        if (location.pathname === "/play") params.goTo("/instruction");
+    }
+    setTimeout(()=>{
+        redireccionar();
+    }, 7000);
     function machinePlay() {
         const options = [
             "piedra",
@@ -821,7 +773,7 @@ function initPlayPage(params) {
     return div;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju"}],"1Yeju":[function(require,module,exports) {
+},{"../../state":"1Yeju","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1Yeju":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "state", ()=>state);
@@ -882,7 +834,9 @@ function initPageJugada(params) {
         tijeras: "<custom-tijera></custom-tijera>"
     };
     div.innerHTML = `
+    <div class="machine">
     ${comps[maquinaJugada]}
+    </div>
     ${comps[miJugada]}
     `;
     const resultOfPlay = (0, _state.state).whoWins(miJugada, maquinaJugada);
@@ -892,53 +846,35 @@ function initPageJugada(params) {
     return div;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju"}],"9DtaA":[function(require,module,exports) {
+},{"../../state":"1Yeju","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hCTRO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initEmpatePage", ()=>initEmpatePage);
-function initEmpatePage(params) {
-    const div = document.createElement("div");
-    div.innerHTML = `
-    <div>
-    <button class="button-again">Volver</button>
-    </div>
-    `;
-    const button = div.querySelector(".button-again");
-    button?.addEventListener("click", (e)=>{
-        params.goTo("/instruction");
-    });
-    return div;
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dk9yp":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initPerdistePage", ()=>initPerdistePage);
+parcelHelpers.export(exports, "pageGanaste", ()=>pageGanaste);
 var _state = require("../../state");
-const imagen = require("url:../../images/lost.png");
-function initPerdistePage(params) {
+const imagen = require("url:../../images/win.png");
+function pageGanaste(params) {
     const currentState = (0, _state.state).getState();
-    currentState.history.computerPlay = currentState.history.computerPlay + 1;
-    console.log("soy el historial mio", currentState.history.myPlay);
+    currentState.history.myPlay = currentState.history.myPlay + 1;
     const div = document.createElement("div");
+    div.className = "contaner-result";
     div.innerHTML = `
-    <img src="${imagen}" alt="">
+    <img src="${imagen}">
     <div class="score-container">
-       <custom-text>Score</custom-text>
-       <custom-text>Vos: ${currentState.history.myPlay}</custom-text>
-       <custom-text>Máquina: ${currentState.history.computerPlay}</custom-text>
+    <custom-text>Score</custom-text>
+    <custom-text class="results">Vos: ${currentState.history.myPlay}</custom-text>
+    <custom-text class="results">Máquina: ${currentState.history.computerPlay}</custom-text>
     </div>
-    <button class="button-again">Volver a jugar</button>
+    <custom-boton>Volver a jugar</custom-boton>
     `;
-    const button = div.querySelector(".button-again");
+    const button = div.querySelector("custom-boton");
     button?.addEventListener("click", (e)=>{
         params.goTo("/instruction");
     });
     return div;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju","url:../../images/lost.png":"5WqDi"}],"5WqDi":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "lost.ca5f8e51.png" + "?" + Date.now();
+},{"../../state":"1Yeju","url:../../images/win.png":"cBmdq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cBmdq":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "win.a7d5a83e.png" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
@@ -974,37 +910,155 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"hCTRO":[function(require,module,exports) {
+},{}],"dk9yp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "pageGanaste", ()=>pageGanaste);
+parcelHelpers.export(exports, "initPerdistePage", ()=>initPerdistePage);
 var _state = require("../../state");
-const imagen = require("url:../../images/win.png");
-function pageGanaste(params) {
+const imagen = require("url:../../images/lost.png");
+function initPerdistePage(params) {
     const currentState = (0, _state.state).getState();
-    currentState.history.myPlay = currentState.history.myPlay + 1;
-    console.log("soy el historial mio", currentState.history.myPlay);
+    currentState.history.computerPlay = currentState.history.computerPlay + 1;
     const div = document.createElement("div");
+    div.className = "contaner-result";
     div.innerHTML = `
-    <img src="${imagen}" alt="">
+    <img src="${imagen}">
     <div class="score-container">
-       <custom-text>Score</custom-text>
-       <custom-text>Vos: ${currentState.history.myPlay}</custom-text>
-       <custom-text>Máquina: ${currentState.history.computerPlay}</custom-text>
+    <custom-text>Score</custom-text>
+    <custom-text class="results">Vos: ${currentState.history.myPlay}</custom-text>
+    <custom-text class="results">Máquina: ${currentState.history.computerPlay}</custom-text>
     </div>
-    <button class="button-again">Volver a jugar</button>
+    <custom-boton>Volver a jugar</custom-boton>
     `;
-    const button = div.querySelector(".button-again");
+    const button = div.querySelector("custom-boton");
     button?.addEventListener("click", (e)=>{
         params.goTo("/instruction");
     });
     return div;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","../../state":"1Yeju","url:../../images/win.png":"cBmdq"}],"cBmdq":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "win.a7d5a83e.png" + "?" + Date.now();
+},{"../../state":"1Yeju","url:../../images/lost.png":"5WqDi","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5WqDi":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "lost.ca5f8e51.png" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"bxzhL":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"9DtaA":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initEmpatePage", ()=>initEmpatePage);
+var _state = require("../../state");
+function initEmpatePage(params) {
+    const currentState = (0, _state.state).getState();
+    const div = document.createElement("div");
+    div.className = "contaner-result";
+    div.innerHTML = `
+    <custom-text variant="title">¡Empataste!</custom-text>
+    <div class="score-container">
+    <custom-text>Score</custom-text>
+    <custom-text class="results">Vos: ${currentState.history.myPlay}</custom-text>
+    <custom-text class="results">Máquina: ${currentState.history.computerPlay}</custom-text>
+    </div>
+    <custom-boton>Volver a jugar</custom-boton>
+    `;
+    const button = div.querySelector("custom-boton");
+    button?.addEventListener("click", (e)=>{
+        params.goTo("/instruction");
+    });
+    return div;
+}
+
+},{"../../state":"1Yeju","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6Xncd":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initTextComp", ()=>initTextComp);
+function initTextComp() {
+    class TextComponent extends HTMLElement {
+        constructor(){
+            super();
+            this.render();
+        }
+        render() {
+            const shadow = this.attachShadow({
+                mode: "open"
+            });
+            const variant = this.getAttribute("variant") || "body";
+            const div = document.createElement("div");
+            div.className = variant;
+            div.textContent = this.textContent;
+            let style = document.createElement("style");
+            style.textContent = `
+            .title {
+                display:flex;
+                flex-direction:column
+                font-family: 'Acme', sans serif;
+                font-size: 52px;
+                font-weight: bold;
+                text-align: center;
+                color: #009048;
+                margin: 115px 0 0;
+            }
+            @media(min-width:769px) {
+                .title {
+                    margin-top: 145px;
+                    font-size: 82px;
+                }
+            }            
+            .body {
+                color: #000
+                font-family: 'Acme', sans serif;
+                font-size: 40px;
+                font-weight: bold;
+                text-align: center;
+                padding:20px;
+            }
+            @media(min-width:769px) {
+                .body {
+                    font-size: 55px;
+                }
+            }`;
+            shadow.appendChild(div);
+            shadow.appendChild(style);
+        }
+    }
+    customElements.define("custom-text", TextComponent);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dZaQH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initBotonComp", ()=>initBotonComp);
+function initBotonComp() {
+    class Boton extends HTMLElement {
+        constructor(){
+            super();
+            this.render();
+        }
+        render() {
+            const shadow = this.attachShadow({
+                mode: "open"
+            });
+            const button = document.createElement("button");
+            button.className = "button";
+            button.textContent = this.textContent;
+            const style = document.createElement("style");
+            style.innerText = `
+            .button {
+                height: 87px;
+                width: 322px;
+                background-color: #006CFC;
+                border: solid 10px #001997;
+                border-radius:5px;
+                font-size: 45px;
+                font-family: 'Acme', sans serif;
+                color: #fff;
+            }
+            `;
+            shadow.appendChild(button);
+            shadow.appendChild(style);
+        }
+    }
+    customElements.define("custom-boton", Boton);
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bxzhL":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "initTijeraComp", ()=>initTijeraComp);
@@ -1085,12 +1139,12 @@ function initPapelComp() {
 },{"url:../../images/papel.jpg":"03ZVJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"03ZVJ":[function(require,module,exports) {
 module.exports = require("./helpers/bundle-url").getBundleURL("7UhFu") + "papel.6b6bddab.jpg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"dZaQH":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"9ZXz4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initBotonComp", ()=>initBotonComp);
-function initBotonComp() {
-    class Boton extends HTMLElement {
+parcelHelpers.export(exports, "initCounterComp", ()=>initCounterComp);
+function initCounterComp() {
+    class Counter extends HTMLElement {
         constructor(){
             super();
             this.render();
@@ -1099,27 +1153,66 @@ function initBotonComp() {
             const shadow = this.attachShadow({
                 mode: "open"
             });
-            const button = document.createElement("button");
-            button.className = "button";
-            button.textContent = this.textContent;
+            const counter = document.createElement("div");
+            counter.className = "counter";
+            counter.innerHTML = `
+            <span class="cuenta"><span>
+            `;
             const style = document.createElement("style");
             style.innerText = `
-            .button {
-                height: 87px;
-                width: 322px;
-                background-color: #006CFC;
-                border: solid 10px #001997;
-                border-radius:5px;
-                font-size: 45px;
+            .counter {
+                margin-top: 20px;
+                height: 250px;
+                width: 250px;
+                border: solid 25px #001997;
+                border-radius:50%;
                 font-family: 'Acme', sans serif;
-                color: #fff;
+                color: #000;
+            }
+            .cuenta {
+                display:block;
+                width:100%;
+                text-align:center;
+                padding-top: 33px;
+                font-size: 150px;
             }
             `;
-            shadow.appendChild(button);
+            let second = 6;
+            setInterval(()=>{
+                second--;
+                let cuenta = counter.querySelector(".cuenta");
+                if (second === 5) {
+                    cuenta.textContent = "5";
+                    counter.style.borderColor = "#F7E6A1";
+                } else if (second == 4) {
+                    cuenta.textContent = "4";
+                    counter.style.borderColor = "#798795";
+                } else if (second == 3) {
+                    cuenta.textContent = "3";
+                    counter.style.borderColor = "#FC5A36";
+                } else if (second == 2) {
+                    cuenta.textContent = "2";
+                    counter.style.borderColor = "#6CB46C";
+                } else if (second == 1) {
+                    cuenta.textContent = "1";
+                    counter.style.borderColor = "#001997";
+                } else if (second == 0) cuenta.innerHTML = `
+                    <p class="tiempo-terminado">
+                    ¡Terminó el tiempo!
+                    </p>
+                    <style>
+                    .tiempo-terminado {
+                        font-size: 50px;
+                        margin: 30px 0 0 0;
+                    }
+                    </style>
+                    `;
+            }, 1000);
             shadow.appendChild(style);
+            shadow.appendChild(counter);
         }
     }
-    customElements.define("custom-boton", Boton);
+    customElements.define("counter-comp", Counter);
 }
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["iJYvl","h7u1C"], "h7u1C", "parcelRequire93c5")

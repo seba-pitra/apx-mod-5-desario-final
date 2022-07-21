@@ -1,4 +1,4 @@
-import { state} from "../../../state"
+import { state} from "../../state"
 
 const imagen = require("url:../../images/win.png")
 
@@ -7,19 +7,18 @@ export function pageGanaste(params) {
     currentState.history.myPlay = currentState.history.myPlay + 1;
     
     const div = document.createElement("div")
-    
+    div.className = "contaner-result"
     div.innerHTML = `
     <img src="${imagen}">
     <div class="score-container">
-    <h2>Score</h2>
-    <h2 class="results">Vos: ${currentState.history.myPlay}</h2>
-    <h2 class="results">Máquina: ${currentState.history.computerPlay}</h2>
+    <custom-text>Score</custom-text>
+    <custom-text class="results">Vos: ${currentState.history.myPlay}</custom-text>
+    <custom-text class="results">Máquina: ${currentState.history.computerPlay}</custom-text>
     </div>
-    <button class="button-again">Volver a jugar</button>
+    <custom-boton>Volver a jugar</custom-boton>
     `
-    div.className = "contaner-result"
     
-    const button = div.querySelector(".button-again")
+    const button = div.querySelector("custom-boton")
     button?.addEventListener("click", (e) => {
         params.goTo("/instruction")
     })

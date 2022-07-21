@@ -5,7 +5,7 @@ export function initPlayPage(params) {
     div.className = "play-container";
     
     div.innerHTML = `
-    <div>Aca va el counter</div>
+    <counter-comp></counter-comp>
     <div class="play-hands-container">
         <custom-tijera></custom-tijera>
         <custom-piedra></custom-piedra>
@@ -13,6 +13,12 @@ export function initPlayPage(params) {
     </div>
     `;
     
+    function redireccionar() {
+        if (location.pathname === "/play") {
+            params.goTo("/instruction");
+        }
+    }
+    setTimeout(()=> { redireccionar() },7000)
     
     function machinePlay() {
         const options = ["piedra","papel","tijeras"]
@@ -26,6 +32,7 @@ export function initPlayPage(params) {
     const tijera:any = div.querySelector("custom-tijera");
 
     tijera.addEventListener("click", (e) => {
+        
         papel.style.opacity = "0.4";
         piedra.style.opacity = "0.4";
         

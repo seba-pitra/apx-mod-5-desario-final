@@ -6,10 +6,11 @@
 }
 
 .score-container {
-    height: 217px;
     width: 260px;
     border: solid 10px;
     border-radius: 6px;
+    margin-bottom: 20px;
+    font-family: 'Odibee Sans', sans-serif;
 }
 
 .results {
