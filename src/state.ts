@@ -38,19 +38,4 @@ export const state = {
             return "ganaste"
         }
     },
-//     historyVos() {
-//         let value = JSON.stringify(sessionStorage.getItem("me"));
-//         if (value === null) {
-//             return value = "0";
-//         }
-//         return value;
-//     },
-//     historyMaquina() {
-//         // let value = JSON.parse(sessionStorage.getItem("maquina"));
-//         if (value === null) {
-//             return value = 0;
-//         }
-
-//         return value;
-//     },
 }
