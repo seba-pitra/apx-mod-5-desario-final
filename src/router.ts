@@ -40,11 +40,11 @@ const routes = [
 
 export function initRouter(container) {
     function goTo(path) {
-        const BASE_PATH = "/desafio-m5";
-        const completePath = location.host.includes("github.io") ? BASE_PATH + path : path;
+        // const BASE_PATH = "/desafio-m5";
+        // const completePath = location.host.includes("github.io") ? BASE_PATH + path : path;
 
-        history.pushState({}, " ", completePath);
-        handleRoute(completePath);
+        history.pushState({}, " ", path);
+        handleRoute(path);
     }
     function handleRoute(route) {    
         for (const r of routes) {
@@ -62,6 +62,10 @@ export function initRouter(container) {
     } else {
         handleRoute(location.pathname);  
     } 
+    if (location.host.includes(".github.io")) {
+        goTo("/apx-mod-5-desario-final/welcome");
+    }
+
 
     window.onpopstate = function() {
         handleRoute(location.pathname);

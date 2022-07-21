@@ -17,7 +17,6 @@ export const state = {
     },
     setState(newState) {
         this.data = newState;
-        console.log("soy el estado, cambié",newState);
         for (const cb of this.listeners) {
             cb();  
         }
