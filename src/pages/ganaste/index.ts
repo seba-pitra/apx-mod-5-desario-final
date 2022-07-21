@@ -1,5 +1,4 @@
 import { state} from "../../state"
-
 const imagen = require("url:../../images/win.png")
 
 export function pageGanaste(params) {
@@ -12,8 +11,8 @@ export function pageGanaste(params) {
     <img src="${imagen}">
     <div class="score-container">
     <custom-text>Score</custom-text>
-    <custom-text class="results">Vos: ${currentState.history.myPlay}</custom-text>
-    <custom-text class="results">Máquina: ${currentState.history.computerPlay}</custom-text>
+    <custom-text class="results">Vos: ${sessionStorage.getItem("me")}</custom-text>
+    <custom-text class="results">Máquina: ${sessionStorage.getItem("machine")}</custom-text>
     </div>
     <custom-boton>Volver a jugar</custom-boton>
     `

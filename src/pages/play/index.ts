@@ -32,7 +32,6 @@ export function initPlayPage(params) {
     const tijera:any = div.querySelector("custom-tijera");
 
     tijera.addEventListener("click", (e) => {
-        
         papel.style.opacity = "0.4";
         piedra.style.opacity = "0.4";
         

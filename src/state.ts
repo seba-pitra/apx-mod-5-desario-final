@@ -1,8 +1,4 @@
 type Jugada = "piedra" |"papel" | "tijeras";
-type Game = {
-    computerPlay: Jugada,
-    myPlay: Jugada
-}
 
 export const state = {
     data:{
@@ -23,20 +19,11 @@ export const state = {
         this.data = newState;
         console.log("soy el estado, cambié",newState);
         for (const cb of this.listeners) {
-            cb();
-            
+            cb();  
         }
     },
     suscribe(cb: (any) => any) {
         this.listeners.push(cb);
-    },
-    pushToHistory(play: Game) {
-        const currentState = this.getState();
-        currentState.history(play)
-    },
-    setMove(move:Jugada) {
-        const currentState = this.getState();
-        currentState.currentGame.myPlay;
     },
     whoWins(myPlay:Jugada, computerPlay:Jugada) {
         if (computerPlay === "piedra" && myPlay === "tijeras") {
