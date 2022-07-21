@@ -39,13 +39,13 @@ const routes = [
 
 
 export function initRouter(container) {
-    function isGithubPages() {
-        return location.host.includes("github.io");
-    }
+
+
     function goTo(path) {
-        history.pushState({}, " ", path);
         const BASE_PATH = "/desafio-m5";
-        const completePath = isGithubPages() ? BASE_PATH + path : path;
+        const completePath = location.host.includes("github.io") ? BASE_PATH + path : path;
+        
+        history.pushState({}, " ", completePath);
         handleRoute(completePath);
     }
     function handleRoute(route) {    
@@ -63,7 +63,7 @@ export function initRouter(container) {
         goTo("/welcome")
     } else {
         handleRoute(location.pathname);  
-    }
+    } 
 
     window.onpopstate = function() {
         handleRoute(location.pathname);
