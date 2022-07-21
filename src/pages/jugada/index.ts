@@ -21,24 +21,15 @@ export function initPageJugada(params) {
     ${ comps[miJugada] }
     `;
 
-    const resultOfPlay = state.whoWins(miJugada, maquinaJugada)
-
+    const resultOfPlay = state.whoWins(miJugada, maquinaJugada);
+    let myValue = sessionStorage.getItem("me");
+    let machineValue = sessionStorage.getItem("machine");
+    
     if (resultOfPlay == "ganaste") {
-        let value = sessionStorage.getItem("me")
-        sessionStorage.setItem("me", JSON.stringify(Number(value) + 1))
+        sessionStorage.setItem("me", JSON.stringify(Number(myValue) + 1))
     } else if(resultOfPlay == "perdiste") {
-        let value = sessionStorage.getItem("machine")
-        sessionStorage.setItem("machine", JSON.stringify(Number(value) + 1))
-    } else {
-        let myValue = sessionStorage.getItem("me")
-        let machineValue = sessionStorage.getItem("machine")
-        if(myValue == null) {
-            sessionStorage.setItem("me", JSON.stringify(Number(myValue)))
-        }
-        if(machineValue == null) {
-            sessionStorage.setItem("machine", JSON.stringify(Number(machineValue)))
-        }
-    }
+        sessionStorage.setItem("machine", JSON.stringify(Number(machineValue) + 1))
+    } 
     
     setTimeout(()=>{ return params.goTo(`/${resultOfPlay}`); }, 2000)
     

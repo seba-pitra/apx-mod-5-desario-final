@@ -4,6 +4,9 @@ const imagen = require("url:../../images/win.png")
 export function pageGanaste(params) {
     const currentState = state.getState();
     currentState.history.myPlay = currentState.history.myPlay + 1;
+
+    const myValue = sessionStorage.getItem("me");
+    const machineValue = sessionStorage.getItem("machine");
     
     const div = document.createElement("div")
     div.className = "contaner-result"
@@ -11,8 +14,8 @@ export function pageGanaste(params) {
     <img src="${imagen}">
     <div class="score-container">
     <custom-text>Score</custom-text>
-    <custom-text class="results">Vos: ${sessionStorage.getItem("me")}</custom-text>
-    <custom-text class="results">Máquina: ${sessionStorage.getItem("machine")}</custom-text>
+    <custom-text class="results">Vos: ${myValue}</custom-text>
+    <custom-text class="results">Máquina: ${machineValue}</custom-text>
     </div>
     <custom-boton>Volver a jugar</custom-boton>
     `

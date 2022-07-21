@@ -39,12 +39,10 @@ const routes = [
 
 
 export function initRouter(container) {
-
-
     function goTo(path) {
         const BASE_PATH = "/desafio-m5";
         const completePath = location.host.includes("github.io") ? BASE_PATH + path : path;
-        
+
         history.pushState({}, " ", completePath);
         handleRoute(completePath);
     }

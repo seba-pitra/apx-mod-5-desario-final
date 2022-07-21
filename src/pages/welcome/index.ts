@@ -20,5 +20,8 @@ export function initPageWelcome(params) {
       params.goTo("./instruction")
     })
     
+    sessionStorage.setItem("me", "0")
+    sessionStorage.setItem("machine", "0")
+
     return div;
 }
