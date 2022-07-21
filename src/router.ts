@@ -1,6 +1,5 @@
 import { initPageWelcome } from "./pages/welcome"
 import { initInstrucionsPage } from "./pages/instruction"
-import { initResultPage } from "./pages/result"
 import { initPlayPage } from "./pages/play";
 import { initPageJugada } from "./pages/jugada";
 import { pageGanaste } from "./pages/ganaste";
@@ -25,10 +24,6 @@ const routes = [
         component: initPageJugada
     },
     {
-        path: /\/result/,
-        component: initResultPage
-    },
-    {
         path: /\/ganaste/,
         component: pageGanaste
     },
@@ -42,10 +37,16 @@ const routes = [
     }
 ];
 
+
 export function initRouter(container) {
+    function isGithubPages() {
+        return location.host.includes("github.io");
+    }
     function goTo(path) {
         history.pushState({}, " ", path);
-        handleRoute(path);
+        const BASE_PATH = "/desafio-m5";
+        const completePath = isGithubPages() ? BASE_PATH + path : path;
+        handleRoute(completePath);
     }
     function handleRoute(route) {    
         for (const r of routes) {
